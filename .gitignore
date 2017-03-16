@@ -3,6 +3,9 @@
 # dependencies
 /node_modules
 
+# intelliJ idea
+/.idea
+
 # testing
 /coverage
 

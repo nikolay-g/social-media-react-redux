@@ -3,7 +3,7 @@
 import React, {PropTypes, Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {addItem} from '../actions/items';
+import {addItem, getServerItems} from '../actions/items';
 import ItemsList from '../components/ItemsList';
 import ItemInput from '../components/ItemInput';
 import type {Item, StoreType} from '../types/definitions'
@@ -22,7 +22,9 @@ class ItemsContainer extends Component {
 
         return (
             <div>
-                <ItemInput addItem={ this.props.actions.addItem }/>
+                <ItemInput addItem={ this.props.actions.addItem }
+                  getServerItems = {this.props.actions.getServerItems}
+                />
                 <ItemsList items={ items }/>
             </div>
         );
@@ -42,7 +44,7 @@ function mapStateToProps(state, props) {
 
 function mapDispatchToProps(dispatch: *) {
     return {
-        actions: bindActionCreators({ addItem }, dispatch)
+        actions: bindActionCreators({ addItem, getServerItems }, dispatch)
     }
 }
 

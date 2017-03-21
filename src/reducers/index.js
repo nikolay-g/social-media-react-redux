@@ -1,10 +1,12 @@
 // @flow
 
-import items from './items.js';
+import selection from './selection.js';
+import keyWords from './keyWords.js';
 import {combineReducers} from 'redux';
 
 const rootReducer = combineReducers({
-    items
+    selection,
+    keyWords
 });
 
 export default rootReducer;

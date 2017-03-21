@@ -1,7 +1,7 @@
 // @flow
 
 import React, {PropTypes} from 'react';
-import type {Item} from '../../types/definitions.js';
+import type {KeyWord} from '../../types/definitions.js';
 import {RadialChart, Treemap} from 'react-vis';
 import chroma from 'chroma-js';
 import Dimensions from 'react-dimensions';
@@ -9,25 +9,16 @@ import 'react-vis/dist/style.css';
 
 class TreeMap extends React.Component {
 
+    props: {keyWords: KeyWord[], selectKeyWord: Function, mode: string, containerWidth: number, containerHeight: number};
+
     render() {
         let scale = chroma.scale(['red', 'green']);
-        const w: number = this.props.containerWidth //|| 0.75 * window.innerWidth;
-        const h: number = this.props.containerHeight //|| window.innerHeight + 100;
-        // let sz = Math.min(this.props.containerWidth, h);
+        const w: number = this.props.containerWidth;
+        const h: number = this.props.containerHeight;
 
-        const myData = {
-            color: 0,
-           children: [
-            {title: "Insurance A", color: scale(0.9).hex(), size: 3938},
-            {title: "Branch Sidney", color: "red", size: 3812},
-            {title: "Banky", color: "red", size: 714},
-            {title: "Retail", color: "red", size: 6714},
-            {title: "Product X", color: "red", size: 6714},
-            {title: "Product Y", color: "red", size: 6714},
-            {title: "Product Z", color: "red", size: 674},
-            {title: "Product A", color: "red", size: 614},
-         ]
-        };
+        const children = this.props.keyWords.map(kw => {
+            return {title: kw.word, color: scale(kw.sentiment.avg).hex(), size: kw.mentions}
+        });
 
       return (
           <Treemap
@@ -36,7 +27,7 @@ class TreeMap extends React.Component {
                 height={h}
                 padding={1}
                 colorType="literal"
-                data={myData}
+                data={{children}}
                 animation={true}
                 onLeafClick={this.onLeafClick.bind(this)}
                 mode={this.props.mode}
@@ -45,9 +36,14 @@ class TreeMap extends React.Component {
     }
 
     onLeafClick(node:*, domEl:*) {
-        debugger;
-        // TODO
+        this.props.selectKeyWord(node.data.title);
     }
 }
+
+TreeMap.propTypes = {
+    keyWords: PropTypes.array.isRequired,
+    selectKeyWord: PropTypes.func.isRequired,
+    mode: PropTypes.string.isRequired
+};
 
 export default Dimensions()(TreeMap);

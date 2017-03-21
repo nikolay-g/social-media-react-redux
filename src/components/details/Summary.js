@@ -1,44 +1,52 @@
 // @flow
 
 import React, {PropTypes} from 'react';
+import {KeyWord} from '../../types/definitions';
 import "./Summary.css";
 
 class Summary extends React.Component {
+    props: {keyWord: KeyWord, containerWidth: number, containerHeight: number};
 
     render() {
+        const {keyWord} = this.props;
+
         return (
             <table className="myTable">
               <tr>
                 <th>Mentions:</th>
-                <td>1</td>
+                <td>{keyWord.mentions}</td>
               </tr>
               <tr>
                 <th>Sentiment:</th>
-                <td>1</td>
+                <td>{keyWord.sentiment.avg.toFixed(2)}</td>
               </tr>
               <tr>
                 <th>Sadness:</th>
-                <td>1</td>
+                <td>{keyWord.sadness.avg.toFixed(2)}</td>
               </tr>
               <tr>
                 <th>Joy:</th>
-                <td>1</td>
+                <td>{keyWord.joy.avg.toFixed(2)}</td>
               </tr>
               <tr>
                 <th>Fear:</th>
-                <td>1</td>
+                <td>{keyWord.fear.avg.toFixed(2)}</td>
               </tr>
               <tr>
                 <th>Disgust:</th>
-                <td>1</td>
+                <td>{keyWord.disgust.avg.toFixed(2)}</td>
               </tr>
               <tr>
                 <th>Anger:</th>
-                <td>1</td>
+                <td>{keyWord.anger.avg.toFixed(2)}</td>
               </tr>
             </table>
         );
     }
 }
+
+Summary.propTypes = {
+    keyWord: PropTypes.object.isRequired
+};
 
 export default Summary;

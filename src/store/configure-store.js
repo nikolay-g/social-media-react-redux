@@ -3,11 +3,12 @@
 import rootReducer from '../reducers';
 import {createStore, applyMiddleware, combineReducers} from 'redux';
 import { apiMiddleware } from 'redux-api-middleware';
-import type {StoreType} from '../types/definitions';
+import appInitialState from './initialState';
+import type {AppState} from '../types/definitions';
 
 const createStoreWithMiddleware = applyMiddleware(apiMiddleware)((createStore: any));
 
-export default (initialState: StoreType) => {
+export default (initialState: AppState = appInitialState) => {
     return createStoreWithMiddleware(rootReducer,
         initialState,
 

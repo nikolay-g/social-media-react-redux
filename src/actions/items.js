@@ -17,7 +17,6 @@ export const addItem = (item: Item) => {
 }
 
 export const getServerItems = () => {
-  debugger;
   return {
     [CALL_API]: {
       endpoint: `${process.env.REACT_APP_API || ''}/items`,

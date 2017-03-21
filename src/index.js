@@ -8,9 +8,9 @@ import './index.css';
 import {Provider} from 'react-redux';
 import configureStore from './store/configure-store';
 import type {Store} from 'redux';
-import type {StoreType} from '../types/definitions';
+import type {AppState} from './types/definitions';
 
-const store: Store<StoreType, A> = configureStore();
+const store: Store<AppState, A> = configureStore();
 
 ReactDOM.render(
     <Provider store={store}>

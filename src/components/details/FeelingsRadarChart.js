@@ -6,20 +6,23 @@ import chroma from 'chroma-js';
 import Dimensions from 'react-dimensions';
 import { Surface, Radar, RadarChart, PolarGrid, Legend, Tooltip,
          PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
+import {KeyWord} from '../../types/definitions';
 
 class FeelingsRadarChart extends React.Component {
+    props: {keyWord: KeyWord, containerWidth: number, containerHeight: number};
 
     render() {
-        const w: number = this.props.containerWidth //|| 0.75 * window.innerWidth;
-        const h: number = (this.props.containerHeight || this.props.containerWidth) //|| window.innerHeight + 100;
+        const w: number = this.props.containerWidth;
+        const h: number = (this.props.containerHeight || this.props.containerWidth);
         const sz: number = Math.min(w,h);
+        const {keyWord} = this.props;
 
         const data = [
-            { subject: 'Sadness', A: 0.5, fullMark: 1 },
-            { subject: 'Joy', A: 0.2, fullMark: 1 },
-            { subject: 'Fear', A: 0.3, fullMark: 1 },
-            { subject: 'Disgust', A: 0.4, fullMark: 1 },
-            { subject: 'Anger', A: 0.5, fullMark: 1 }
+            { subject: 'Sadness', A: keyWord.sadness.avg, fullMark: 1 },
+            { subject: 'Joy', A: keyWord.joy.avg, fullMark: 1 },
+            { subject: 'Fear', A: keyWord.fear.avg, fullMark: 1 },
+            { subject: 'Disgust', A: keyWord.disgust.avg, fullMark: 1 },
+            { subject: 'Anger', A: keyWord.anger.avg, fullMark: 1 }
         ];
 
         return (
@@ -31,7 +34,10 @@ class FeelingsRadarChart extends React.Component {
             </RadarChart>
         );
     }
-
 }
+
+FeelingsRadarChart.propTypes = {
+    keyWord: PropTypes.object.isRequired
+};
 
 export default Dimensions()(FeelingsRadarChart);

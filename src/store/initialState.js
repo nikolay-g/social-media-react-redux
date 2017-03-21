@@ -14,7 +14,7 @@ const stats = [
     { avg: 0.78, min: 0.56, max: 0.83, qrt1: 0.62, qrt3: 0.83 },
     { avg: 0.73, min: 0.67, max: 0.74, qrt1: 0.73, qrt3: 0.81 },
     { avg: 0.68, min: 0.64, max: 0.73, qrt1: 0.71, qrt3: 0.83 },
-    { avg: 0.95, min: 0.62, max: 0.72, qrt1: 0.72, qrt3: 0.82 },
+    { avg: 0.90, min: 0.62, max: 0.72, qrt1: 0.72, qrt3: 0.82 },
 ];
 const statsLen = stats.length;
 

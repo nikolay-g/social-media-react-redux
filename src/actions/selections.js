@@ -1,9 +1,10 @@
 // @flow
 
-import type {Item} from '../types/definitions';
+import type {Selection} from '../types/definitions';
 import {CALL_API} from 'redux-api-middleware';
 
 export const SELECT_KEY_WORD = 'SELECT_KEY_WORD';
+export const UPDATE_SELECTION = 'UPDATE_SELECTION';
 
 export const selectKeyWord = (keyWord: string) => {
     return {
@@ -11,3 +12,10 @@ export const selectKeyWord = (keyWord: string) => {
         keyWord: keyWord
     };
 };
+
+export const updateSelection = (selection: Selection) => {
+    return {
+        type: UPDATE_SELECTION,
+        selection: selection
+    };
+}

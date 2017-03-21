@@ -6,7 +6,7 @@ import chroma from 'chroma-js';
 import Dimensions from 'react-dimensions';
 import { Surface, Radar, RadarChart, PolarGrid, Legend, Tooltip,
          PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
-import {KeyWord} from '../../types/definitions';
+import type {KeyWord} from '../../types/definitions';
 
 class FeelingsRadarChart extends React.Component {
     props: {keyWord: KeyWord, containerWidth: number, containerHeight: number};
@@ -14,7 +14,7 @@ class FeelingsRadarChart extends React.Component {
     render() {
         const w: number = this.props.containerWidth;
         const h: number = (this.props.containerHeight || this.props.containerWidth);
-        const sz: number = Math.min(w,h);
+        const sz: number = 0.7*Math.min(w,h);
         const {keyWord} = this.props;
 
         const data = [
@@ -26,7 +26,7 @@ class FeelingsRadarChart extends React.Component {
         ];
 
         return (
-            <RadarChart outerRadius={sz/3} width={sz} height={sz} data={data}>
+            <RadarChart outerRadius={sz/3.5} width={sz} height={sz} data={data}>
               <Radar name="Feelings" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6}/>
               <PolarGrid />
               <PolarAngleAxis dataKey="subject" />

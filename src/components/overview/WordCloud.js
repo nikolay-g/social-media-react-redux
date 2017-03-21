@@ -43,8 +43,8 @@ class WordCloud extends React.Component {
                   animationDuration: `${Math.sqrt(size)}s`,
                   fontSize: `${size}em`,
                   color: `${color || 'green'}`,
-                  margin: `${Math.round(Math.log2(size) + 2)}px`,
-                  padding: `${Math.round(Math.log2(size) + 2)}px`,
+                  margin: `${Math.round(Math.log2(size) + 1)}px`,
+                  padding: `${Math.round(Math.log2(size) + 1)}px`,
                   display: 'inline-block',
                   cursor: 'pointer'
             }}>{tag.value}</span>

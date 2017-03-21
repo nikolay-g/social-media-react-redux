@@ -13,7 +13,7 @@ class WordCloud extends React.Component {
 
     render() {
 
-        const w: number = Math.min(350, this.props.containerWidth);
+        const w: number = Math.min(450, this.props.containerWidth);
         const h: number = this.props.containerHeight;
 
         let scale = chroma.scale(['red', 'green']);
@@ -25,7 +25,7 @@ class WordCloud extends React.Component {
         return (
             <TagCloud style={{width: `${w}px`, height: `${h}px`, margin: 'auto'}}
                       minSize={0.5}
-                      maxSize={3}
+                      maxSize={2.5}
                       tags={data}
                       className="simple-cloud"
                       disableRandomColor={true}

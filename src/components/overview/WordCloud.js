@@ -13,7 +13,7 @@ class WordCloud extends React.Component {
 
     render() {
 
-        const w: number = Math.min(400, this.props.containerWidth);
+        const w: number = Math.min(350, this.props.containerWidth);
         const h: number = this.props.containerHeight;
 
         let scale = chroma.scale(['red', 'green']);

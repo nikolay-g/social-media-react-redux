@@ -42,7 +42,7 @@ class KeywordDetails extends React.Component {
         return (
             <section>
                 <hr/>
-                <h3>Drill-Down Analysis for "{keyWord.word}"</h3>
+                <h4>Drill-Down Analysis for "{keyWord.word}"</h4>
                 <Tabs index={this.state.selectedIndex} onChange={this.handleTabChange} inverse>
                     <Tab label='Overview'>
                         <Summary keyWord={keyWord}/>

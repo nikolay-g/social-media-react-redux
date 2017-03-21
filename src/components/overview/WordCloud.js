@@ -16,7 +16,7 @@ class WordCloud extends React.Component {
         const w: number = Math.min(450, this.props.containerWidth);
         const h: number = this.props.containerHeight;
 
-        let scale = chroma.scale(['red', 'green']);
+        let scale = chroma.scale('Spectral');
 
         const data = this.props.keyWords.map(kw => {
             return {value: kw.word, color: scale(kw.sentiment.avg).hex(), count: kw.mentions}

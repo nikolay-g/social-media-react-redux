@@ -12,7 +12,8 @@ class TreeMap extends React.Component {
     props: {keyWords: KeyWord[], selectKeyWord: Function, mode: string, containerWidth: number, containerHeight: number};
 
     render() {
-        let scale = chroma.scale(['red', 'green']);
+        // let scale = chroma.scale(['red', 'orange', 'lightgrey', 'lightgreen', 'green']);
+        let scale = chroma.scale('Spectral');
         const w: number = this.props.containerWidth;
         const h: number = this.props.containerHeight;
 

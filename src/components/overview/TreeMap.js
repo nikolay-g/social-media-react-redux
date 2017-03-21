@@ -5,6 +5,7 @@ import type {KeyWord} from '../../types/definitions.js';
 import {RadialChart, Treemap} from 'react-vis';
 import chroma from 'chroma-js';
 import Dimensions from 'react-dimensions';
+import scale from '../../util/colors';
 import 'react-vis/dist/style.css';
 
 class TreeMap extends React.Component {
@@ -12,8 +13,6 @@ class TreeMap extends React.Component {
     props: {keyWords: KeyWord[], selectKeyWord: Function, mode: string, containerWidth: number, containerHeight: number};
 
     render() {
-        // let scale = chroma.scale(['red', 'orange', 'lightgrey', 'lightgreen', 'green']);
-        let scale = chroma.scale('Spectral');
         const w: number = this.props.containerWidth;
         const h: number = this.props.containerHeight;
 

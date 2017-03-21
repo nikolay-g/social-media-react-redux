@@ -2,7 +2,7 @@
 
 import React, {PropTypes} from 'react';
 import {TagCloud} from "react-tagcloud";
-import chroma from 'chroma-js';
+import scale from '../../util/colors';
 import Dimensions from 'react-dimensions';
 import type {KeyWord} from '../../types/definitions.js';
 import './WordCloud.css';
@@ -15,8 +15,6 @@ class WordCloud extends React.Component {
 
         const w: number = Math.min(450, this.props.containerWidth);
         const h: number = this.props.containerHeight;
-
-        let scale = chroma.scale('Spectral');
 
         const data = this.props.keyWords.map(kw => {
             return {value: kw.word, color: scale(kw.sentiment.avg).hex(), count: kw.mentions}

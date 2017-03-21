@@ -1,0 +1,10 @@
+
+table th {
+    width: 7em;
+    text-align: left;
+}
+
+table td {
+    width: 35%;
+    text-align: rigth;
+}

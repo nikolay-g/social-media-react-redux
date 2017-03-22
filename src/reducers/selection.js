@@ -7,7 +7,7 @@ import initialState from '../store/initialState';
 export default (state: ?Selection, action: Object) => {
     switch (action.type) {
         case types.SELECT_KEY_WORD:
-            return Object.assign({}, state, {currentWord: action.keyWord});
+            return Object.assign({}, state, {currentTopic: action.topic});
         case types.UPDATE_SELECTION:
             return Object.assign({}, state, action.selection);
         default:

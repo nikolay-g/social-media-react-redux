@@ -4,18 +4,18 @@ import React, {PropTypes} from 'react';
 import {TagCloud} from "react-tagcloud";
 import Dimensions from 'react-dimensions';
 import {VictoryCandlestick, VictoryChart, VictoryAxis, VictoryTheme} from 'victory';
-import type {KeyWord} from '../../types/definitions';
+import type {Topic} from '../../types/definitions';
 
 class FeelingsCandlesChart extends React.Component {
 
-    props: {keyWord: KeyWord, containerWidth: number, containerHeight: number};
+    props: {topic: Topic, containerWidth: number, containerHeight: number};
 
     render() {
         const w: number = this.props.containerWidth;
         const h: number = (this.props.containerHeight || this.props.containerWidth);
         const sz: number = 0.75*Math.min(w, h);
-        const {keyWord} = this.props;
-        const {sadness, joy, fear, disgust, anger} = keyWord;
+        const {topic} = this.props;
+        const {sadness, joy, fear, disgust, anger} = topic;
 
         return (
             <div style={{width: `${sz}px`, height: `${sz}px`}}>
@@ -41,7 +41,7 @@ class FeelingsCandlesChart extends React.Component {
 }
 
 FeelingsCandlesChart.propTypes = {
-    keyWord: PropTypes.object.isRequired
+    topic: PropTypes.object.isRequired
 };
 
 export default Dimensions()(FeelingsCandlesChart);

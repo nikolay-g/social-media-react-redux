@@ -1,45 +1,45 @@
 // @flow
 
 import React, {PropTypes} from 'react';
-import {KeyWord} from '../../types/definitions';
+import {Topic} from '../../types/definitions';
 import "./Summary.css";
 
 class Summary extends React.Component {
-    props: {keyWord: KeyWord, containerWidth: number, containerHeight: number};
+    props: {topic: Topic, containerWidth: number, containerHeight: number};
 
     render() {
-        const {keyWord} = this.props;
+        const {topic} = this.props;
 
         return (
             <table className="myTable">
                 <tbody>
                 <tr>
                     <th>Mentions:</th>
-                    <td>{keyWord.mentions}</td>
+                    <td>{topic.mentions}</td>
                 </tr>
                 <tr>
                     <th>Sentiment:</th>
-                    <td>{keyWord.sentiment.avg.toFixed(2)}</td>
+                    <td>{topic.sentiment.avg.toFixed(2)}</td>
                 </tr>
                 <tr>
                     <th>Sadness:</th>
-                    <td>{keyWord.sadness.avg.toFixed(2)}</td>
+                    <td>{topic.sadness.avg.toFixed(2)}</td>
                 </tr>
                 <tr>
                     <th>Joy:</th>
-                    <td>{keyWord.joy.avg.toFixed(2)}</td>
+                    <td>{topic.joy.avg.toFixed(2)}</td>
                 </tr>
                 <tr>
                     <th>Fear:</th>
-                    <td>{keyWord.fear.avg.toFixed(2)}</td>
+                    <td>{topic.fear.avg.toFixed(2)}</td>
                 </tr>
                 <tr>
                     <th>Disgust:</th>
-                    <td>{keyWord.disgust.avg.toFixed(2)}</td>
+                    <td>{topic.disgust.avg.toFixed(2)}</td>
                 </tr>
                 <tr>
                     <th>Anger:</th>
-                    <td>{keyWord.anger.avg.toFixed(2)}</td>
+                    <td>{topic.anger.avg.toFixed(2)}</td>
                 </tr>
                 </tbody>
             </table>
@@ -48,7 +48,7 @@ class Summary extends React.Component {
 }
 
 Summary.propTypes = {
-    keyWord: PropTypes.object.isRequired
+    topic: PropTypes.object.isRequired
 };
 
 export default Summary;

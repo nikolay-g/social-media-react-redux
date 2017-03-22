@@ -23,9 +23,9 @@ const initialState: AppState = {
         sources: ['fb', 'tw'],
         states: ['vic', 'nsw', 'qld', 'other'],
         timeframe: '24h',
-        currentWord: null
+        currentTopic: null
     },
-    keyWords: [
+    topics: [
         {
             word: 'Home Ins.',
             mentions: rf(100),

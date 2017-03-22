@@ -5,15 +5,15 @@ import {PieChart, Pie, Legend, Tooltip} from 'recharts';
 import Dimensions from 'react-dimensions';
 import {Grid, Col, Row} from 'react-flexbox-grid';
 import {good, bad, ligthen} from '../../util/colors';
-import type {KeyWord} from '../../types/definitions';
+import type {Topic} from '../../types/definitions';
 
 class FeelingsDashboardChart extends React.Component {
-    props: {keyWord: KeyWord, containerWidth: number, containerHeight: number};
+    props: {topic: Topic, containerWidth: number, containerHeight: number};
 
     render() {
         const w: number = this.props.containerWidth;
         const h: number = (this.props.containerHeight || this.props.containerWidth);
-        const {keyWord} = this.props;
+        const {topic} = this.props;
 
         const data02 = [{name: 'Group A', value: 0.7}, {name: '', value: 0.3}];
 
@@ -58,7 +58,7 @@ class FeelingsDashboardChart extends React.Component {
     }
 
     data(propName: string) {
-        const value: number = this.props.keyWord[propName].avg;
+        const value: number = this.props.topic[propName].avg;
         const color = propName === 'joy' ? good : bad;
 
         return [
@@ -77,7 +77,7 @@ class FeelingsDashboardChart extends React.Component {
 }
 
 FeelingsDashboardChart.propTypes = {
-    keyWord: PropTypes.object.isRequired
+    topic: PropTypes.object.isRequired
 };
 
 export default Dimensions()(FeelingsDashboardChart);

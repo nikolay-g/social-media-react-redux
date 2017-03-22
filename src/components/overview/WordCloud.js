@@ -4,19 +4,19 @@ import React, {PropTypes} from 'react';
 import {TagCloud} from "react-tagcloud";
 import scale from '../../util/colors';
 import Dimensions from 'react-dimensions';
-import type {KeyWord} from '../../types/definitions.js';
+import type {Topic} from '../../types/definitions.js';
 import './WordCloud.css';
 
 class WordCloud extends React.Component {
 
-    props: {keyWords: KeyWord[], selectKeyWord: Function, containerWidth: number, containerHeight: number};
+    props: {topics: Topic[], selectTopic: Function, containerWidth: number, containerHeight: number};
 
     render() {
 
         const w: number = Math.min(450, this.props.containerWidth);
         const h: number = this.props.containerHeight;
 
-        const data = this.props.keyWords.map(kw => {
+        const data = this.props.topics.map(kw => {
             return {value: kw.word, color: scale(kw.sentiment.avg).hex(), count: kw.mentions}
         });
 
@@ -49,14 +49,13 @@ class WordCloud extends React.Component {
     };
 
     onLeafClick(tag: string) {
-        this.props.selectKeyWord(tag.value);
+        this.props.selectTopic(tag.value);
     }
 }
 
 WordCloud.propTypes = {
-    keyWords: PropTypes.array.isRequired,
-    selectKeyWord: PropTypes.func.isRequired,
-    selectKeyWord: PropTypes.func.isRequired
+    topics: PropTypes.array.isRequired,
+    selectTopic: PropTypes.func.isRequired
 };
 
 export default Dimensions()(WordCloud);

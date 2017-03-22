@@ -3,10 +3,10 @@
 import React, {PropTypes, Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {selectKeyWord} from '../actions/selections';
+import {topic} from '../actions/selections';
 import TreeMap from '../components/overview/TreeMap';
 import WordCloud from '../components/overview/WordCloud';
-import KeywordDetails from '../components/details/KeywordDetails';
+import TopicDetails from '../components/details/TopicDetails';
 import type {AppState} from '../types/definitions'
 
 class ItemsContainer extends Component {
@@ -14,33 +14,33 @@ class ItemsContainer extends Component {
     props: {appState: AppState, chartType: String, actions:*};
 
     render() {
-        const {keyWords, selection } = this.props.appState;
-        const keyWord = selection.currentWord && keyWords.find( word => word.word === selection.currentWord);
+        const {topics, selection } = this.props.appState;
+        const topic = selection.currentTopic && topics.find(topic => topic.word === selection.currentTopic);
 
         return (
             <div>
                 { this.loadChart() }
-                <KeywordDetails keyWord={keyWord}/>
+                <TopicDetails topic={topic}/>
             </div>
         );
     }
 
     loadChart() {
         // const {appState} = this.props;
-        const keyWords = this.props.appState.keyWords;
-        const selectKeyWordCallBack = this.props.actions.selectKeyWord;
+        const topics = this.props.appState.topics;
+        const selectTopic = this.props.actions.topic;
 
         if (this.props.chartType === 'treemap') {
             return (<div style={{height: '40vh'}}>
-                <TreeMap mode="binary" keyWords={keyWords} selectKeyWord={selectKeyWordCallBack} />
+                <TreeMap mode="binary" topics={topics} selectTopic={selectTopic} />
             </div>);
         } else if (this.props.chartType === 'bubble_chart'){
             return (<div style={{height: '40vh'}}>
-                <TreeMap mode="circlePack" keyWords={keyWords} selectKeyWord={selectKeyWordCallBack} />
+                <TreeMap mode="circlePack" topics={topics} selectTopic={selectTopic} />
             </div>);
         } else if(this.props.chartType === 'cloud') {
             return (<div style={{height: '40vh'}}>
-                <WordCloud keyWords={keyWords} selectKeyWord={selectKeyWordCallBack}/>
+                <WordCloud topics={topics} selectTopic={selectTopic}/>
             </div>)
         }
     }
@@ -60,7 +60,7 @@ function mapStateToProps(state, props) {
 
 function mapDispatchToProps(dispatch: *) {
     return {
-        actions: bindActionCreators({ selectKeyWord }, dispatch)
+        actions: bindActionCreators({ topic }, dispatch)
     }
 }
 

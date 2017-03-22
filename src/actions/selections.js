@@ -6,10 +6,10 @@ import {CALL_API} from 'redux-api-middleware';
 export const SELECT_KEY_WORD = 'SELECT_KEY_WORD';
 export const UPDATE_SELECTION = 'UPDATE_SELECTION';
 
-export const selectKeyWord = (keyWord: string) => {
+export const topic = (topic: string) => {
     return {
         type: SELECT_KEY_WORD,
-        keyWord: keyWord
+        topic: topic
     };
 };
 

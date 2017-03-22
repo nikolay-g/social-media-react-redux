@@ -8,6 +8,7 @@ import FeelingsDashboardChart from './FeelingsDashboardChart';
 import Summary from './Summary';
 import Tab from 'react-toolbox/lib/tabs/Tab';
 import Tabs from 'react-toolbox/lib/tabs/Tabs';
+import './KeywordDetails.css';
 
 import type {KeyWord} from '../../types/definitions';
 
@@ -28,8 +29,9 @@ class KeywordDetails extends React.Component {
         } else {
             return (
                 <div>
-                    <hr/>
-                    <p>Select a keyword for analysis ...</p>
+                    <br/>
+                    <br/>
+                    <h3>Select a topic for analysis ...</h3>
                 </div>
             );
         }
@@ -42,10 +44,9 @@ class KeywordDetails extends React.Component {
 
         return (
             <section>
-                <hr/>
-                <p>Drill-Down Analysis for "{keyWord.word}"</p>
-                <Tabs index={this.state.selectedIndex} onChange={this.handleTabChange} inverse>
-                    <Tab label='Overview'>
+                <p>Analysis for <strong>"{keyWord.word}" ... </strong></p>
+                <Tabs index={this.state.selectedIndex} onChange={this.handleTabChange} inverse className={"ChartNavButton"}>
+                    <Tab label='Stats'>
                         <Summary keyWord={keyWord}/>
                     </Tab>
                     <Tab label='Emo Radar'>
@@ -58,7 +59,12 @@ class KeywordDetails extends React.Component {
                             <FeelingsDashboardChart keyWord={keyWord}/>
                         </div>
                     </Tab>
-                    <Tab label='Emo Spectrum'>
+                    <Tab label='Emo Ranges'>
+                        <div style={{height: `${sz}px`}}>
+                            <FeelingsCandlesChart keyWord={keyWord}/>
+                        </div>
+                    </Tab>
+                    <Tab label='Words'>
                         <div style={{height: `${sz}px`}}>
                             <FeelingsCandlesChart keyWord={keyWord}/>
                         </div>

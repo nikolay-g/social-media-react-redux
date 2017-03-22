@@ -1,0 +1,12 @@
+
+@media (max-width: 600px) {
+    .ChartNavButton div {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 500px) {
+    .ChartNavButton div {
+        font-size: 11px;
+    }
+}

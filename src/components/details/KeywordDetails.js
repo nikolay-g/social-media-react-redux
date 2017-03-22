@@ -4,6 +4,7 @@ import React, {PropTypes} from 'react';
 import Dimensions from 'react-dimensions';
 import FeelingsRadarChart from './FeelingsRadarChart';
 import FeelingsCandlesChart from './FeelingsCandlesChart';
+import FeelingsDashboardChart from './FeelingsDashboardChart';
 import Summary from './Summary';
 import Tab from 'react-toolbox/lib/tabs/Tab';
 import Tabs from 'react-toolbox/lib/tabs/Tabs';
@@ -47,12 +48,17 @@ class KeywordDetails extends React.Component {
                     <Tab label='Overview'>
                         <Summary keyWord={keyWord}/>
                     </Tab>
-                    <Tab label='Radar'>
+                    <Tab label='Emo Radar'>
                         <div style={{height: `${sz}px`}}>
                             <FeelingsRadarChart keyWord={keyWord}/>
                         </div>
                     </Tab>
-                    <Tab label='Spectrum'>
+                    <Tab label='Emo Dashboard'>
+                        <div style={{height: `${sz}px`}}>
+                            <FeelingsDashboardChart keyWord={keyWord}/>
+                        </div>
+                    </Tab>
+                    <Tab label='Emo Spectrum'>
                         <div style={{height: `${sz}px`}}>
                             <FeelingsCandlesChart keyWord={keyWord}/>
                         </div>

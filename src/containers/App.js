@@ -36,9 +36,9 @@ class App extends Component {
                 </NavDrawer>
                 <Panel>
                     <AppBar leftIcon='settings' onLeftIconClick={ this.toggleDrawerActive }>
-                        {this.navButton('treemap', 'view_compact', 'Treemap')}
+                        {this.navButton('treemap', 'view_compact', 'Heatmap')}
                         {this.navButton('bubble_chart', 'bubble_chart', 'Bubbles')}
-                        {this.navButton('cloud', 'cloud', 'Cloud', 'Cloud')}
+                        {this.navButton('cloud', 'cloud', 'Topic Cloud')}
                     </AppBar>
 
                     <div style={{ flex: 1, padding: '1.0rem' }}>

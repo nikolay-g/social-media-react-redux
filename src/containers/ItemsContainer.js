@@ -31,15 +31,15 @@ class ItemsContainer extends Component {
         const selectKeyWordCallBack = this.props.actions.selectKeyWord;
 
         if (this.props.chartType === 'treemap') {
-            return (<div style={{height: '30vh'}}>
+            return (<div style={{height: '40vh'}}>
                 <TreeMap mode="binary" keyWords={keyWords} selectKeyWord={selectKeyWordCallBack} />
             </div>);
         } else if (this.props.chartType === 'bubble_chart'){
-            return (<div style={{height: '30vh'}}>
+            return (<div style={{height: '40vh'}}>
                 <TreeMap mode="circlePack" keyWords={keyWords} selectKeyWord={selectKeyWordCallBack} />
             </div>);
         } else if(this.props.chartType === 'cloud') {
-            return (<div style={{height: '30vh'}}>
+            return (<div style={{height: '40vh'}}>
                 <WordCloud keyWords={keyWords} selectKeyWord={selectKeyWordCallBack}/>
             </div>)
         }

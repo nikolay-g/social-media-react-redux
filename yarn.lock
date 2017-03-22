@@ -1722,7 +1722,7 @@ d3-transition@1, d3-transition@1.0.4:
     d3-selection "1"
     d3-timer "1"
 
-d3-voronoi@1.1.2, d3-voronoi@^1.0.0, d3-voronoi@^1.1.1:
+d3-voronoi@1.1.2, d3-voronoi@^1.1.1, d3-voronoi@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/d3-voronoi/-/d3-voronoi-1.1.2.tgz#1687667e8f13a2d158c80c1480c5a29cb0d8973c"
 
@@ -1976,8 +1976,8 @@ electron-to-chromium@^1.1.0, electron-to-chromium@^1.2.7:
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.2.7.tgz#4f748061407e478c76256d04496972b71f647407"
 
 element-resize-event@^2.0.4:
-  version "2.0.7"
-  resolved "https://registry.yarnpkg.com/element-resize-event/-/element-resize-event-2.0.7.tgz#8b63953715967cd2241620245573e79e684e07b0"
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/element-resize-event/-/element-resize-event-2.0.8.tgz#2c534fb5ffa68bdd294ce86d50fdbb857197f4a6"
 
 emoji-regex@^6.1.0:
   version "6.4.1"
@@ -2383,8 +2383,8 @@ fb-watchman@^1.8.0, fb-watchman@^1.9.0:
     bser "1.0.2"
 
 fbjs@^0.8.1, fbjs@^0.8.4:
-  version "0.8.10"
-  resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.10.tgz#d295265ca20982aec200d91d759b67fb1818699c"
+  version "0.8.11"
+  resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.11.tgz#340b590b8a2278a01ef7467c07a16da9b753db24"
   dependencies:
     core-js "^1.0.0"
     isomorphic-fetch "^2.1.1"
@@ -4846,8 +4846,8 @@ punycode@^1.2.4, punycode@^1.4.1:
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-1.4.1.tgz#c0d5a63b2718800ad8e1eb0fa5269c84dd41845e"
 
 q@^1.1.2:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/q/-/q-1.4.1.tgz#55705bcd93c5f3673530c2c2cbc0c2b3addc286e"
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/q/-/q-1.5.0.tgz#dd01bac9d06d30e6f219aecb8253ee9ebdc308f1"
 
 qs@6.4.0, qs@~6.4.0:
   version "6.4.0"
@@ -6075,17 +6075,17 @@ verror@1.3.6:
   dependencies:
     extsprintf "1.0.2"
 
-victory-chart@^16.1.2:
-  version "16.1.2"
-  resolved "https://registry.yarnpkg.com/victory-chart/-/victory-chart-16.1.2.tgz#79fdfacaf77931a37a3bc68319fd2ec3eb50b37c"
+victory-chart@^18.1.4:
+  version "18.1.4"
+  resolved "https://registry.yarnpkg.com/victory-chart/-/victory-chart-18.1.4.tgz#c1a87b5b101762a10d686701bf8ab34c3707c498"
   dependencies:
-    d3-voronoi "^1.0.0"
+    d3-voronoi "^1.1.2"
     lodash "^4.12.0"
-    victory-core "^13.0.0"
+    victory-core "^14.0.7"
 
-victory-core@^13.0.0, victory-core@^13.0.2:
-  version "13.0.4"
-  resolved "https://registry.yarnpkg.com/victory-core/-/victory-core-13.0.4.tgz#e5ef479a0492ac84394d9550de8baab067b3e240"
+victory-core@^14.0.7:
+  version "14.0.7"
+  resolved "https://registry.yarnpkg.com/victory-core/-/victory-core-14.0.7.tgz#e26859e82b960d03371f7bd28f48801a73fc3925"
   dependencies:
     d3-ease "^1.0.0"
     d3-interpolate "^1.1.1"
@@ -6094,32 +6094,21 @@ victory-core@^13.0.0, victory-core@^13.0.2:
     d3-timer "^1.0.0"
     lodash "^4.12.0"
 
-victory-core@^14.0.3:
-  version "14.0.6"
-  resolved "https://registry.yarnpkg.com/victory-core/-/victory-core-14.0.6.tgz#c804cfdc4cfd79df298ae3bcff286fc66f3955e1"
-  dependencies:
-    d3-ease "^1.0.0"
-    d3-interpolate "^1.1.1"
-    d3-scale "^1.0.0"
-    d3-shape "^1.0.0"
-    d3-timer "^1.0.0"
-    lodash "^4.12.0"
-
-victory-pie@^10.1.0:
-  version "10.2.2"
-  resolved "https://registry.yarnpkg.com/victory-pie/-/victory-pie-10.2.2.tgz#87b7154a9d94414bfa3d7dd184e30e4311a7800b"
+victory-pie@^10.2.3:
+  version "10.2.3"
+  resolved "https://registry.yarnpkg.com/victory-pie/-/victory-pie-10.2.3.tgz#c8ce51222cdf14a8fee61c2d73724710946a103f"
   dependencies:
     d3-shape "^1.0.0"
     lodash "^4.12.0"
-    victory-core "^14.0.3"
+    victory-core "^14.0.7"
 
-victory@0.17.0:
-  version "0.17.0"
-  resolved "https://registry.yarnpkg.com/victory/-/victory-0.17.0.tgz#4f196cfe85504032b93bf0156786b436ccd46d6e"
+victory@0.18.3:
+  version "0.18.3"
+  resolved "https://registry.yarnpkg.com/victory/-/victory-0.18.3.tgz#7cef811d7dcc35272a273038074c3beed7a3caba"
   dependencies:
-    victory-chart "^16.1.2"
-    victory-core "^13.0.2"
-    victory-pie "^10.1.0"
+    victory-chart "^18.1.4"
+    victory-core "^14.0.7"
+    victory-pie "^10.2.3"
 
 viewport-dimensions@^0.2.0:
   version "0.2.0"

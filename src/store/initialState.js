@@ -34,7 +34,8 @@ const initialState: AppState = {
             joy: stats[rf(statsLen)],
             fear: stats[rf(statsLen)],
             disgust: stats[rf(statsLen)],
-            anger: stats[rf(statsLen)]
+            anger: stats[rf(statsLen)],
+            wordFreq: [{word: 'office', freq: 3}, {word: 'brisie', freq: 5}, {word: 'insurance', freq: 10}]
         },{
             word: 'Car Ins.',
             mentions: rf(100),
@@ -43,7 +44,8 @@ const initialState: AppState = {
             joy: stats[rf(statsLen)],
             fear: stats[rf(statsLen)],
             disgust: stats[rf(statsLen)],
-            anger: stats[rf(statsLen)]
+            anger: stats[rf(statsLen)],
+            wordFreq: [{word: 'office', freq: 3}, {word: 'brisie', freq: 5}, {word: 'insurance', freq: 10}]
         },{
             word: 'Motor Ins.',
             mentions: rf(100),
@@ -52,7 +54,8 @@ const initialState: AppState = {
             joy: stats[rf(statsLen)],
             fear: stats[rf(statsLen)],
             disgust: stats[rf(statsLen)],
-            anger: stats[rf(statsLen)]
+            anger: stats[rf(statsLen)],
+            wordFreq: [{word: 'office', freq: 3}, {word: 'brisie', freq: 5}, {word: 'insurance', freq: 10}]
         },{
             word: 'House Ins.',
             mentions: rf(100),
@@ -61,7 +64,8 @@ const initialState: AppState = {
             joy: stats[rf(statsLen)],
             fear: stats[rf(statsLen)],
             disgust: stats[rf(statsLen)],
-            anger: stats[rf(statsLen)]
+            anger: stats[rf(statsLen)],
+            wordFreq: [{word: 'office', freq: 3}, {word: 'brisie', freq: 5}, {word: 'insurance', freq: 10}]
         },{
             word: 'Airfare Ins.',
             mentions: rf(100),
@@ -70,7 +74,8 @@ const initialState: AppState = {
             joy: stats[rf(statsLen)],
             fear: stats[rf(statsLen)],
             disgust: stats[rf(statsLen)],
-            anger: stats[rf(statsLen)]
+            anger: stats[rf(statsLen)],
+            wordFreq: [{word: 'office', freq: 3}, {word: 'brisie', freq: 5}, {word: 'insurance', freq: 10}]
         },{
             word: 'Loan',
             mentions: rf(100),
@@ -79,7 +84,8 @@ const initialState: AppState = {
             joy: stats[rf(statsLen)],
             fear: stats[rf(statsLen)],
             disgust: stats[rf(statsLen)],
-            anger: stats[rf(statsLen)]
+            anger: stats[rf(statsLen)],
+            wordFreq: [{word: 'office', freq: 3}, {word: 'brisie', freq: 5}, {word: 'insurance', freq: 10}]
         },{
             word: 'Mortgage',
             mentions: rf(100),
@@ -88,7 +94,8 @@ const initialState: AppState = {
             joy: stats[rf(statsLen)],
             fear: stats[rf(statsLen)],
             disgust: stats[rf(statsLen)],
-            anger: stats[rf(statsLen)]
+            anger: stats[rf(statsLen)],
+            wordFreq: [{word: 'office', freq: 3}, {word: 'brisie', freq: 5}, {word: 'insurance', freq: 10}]
         },{
             word: 'Life Ins.',
             mentions: rf(100),
@@ -97,7 +104,8 @@ const initialState: AppState = {
             joy: stats[rf(statsLen)],
             fear: stats[rf(statsLen)],
             disgust: stats[rf(statsLen)],
-            anger: stats[rf(statsLen)]
+            anger: stats[rf(statsLen)],
+            wordFreq: [{word: 'office', freq: 3}, {word: 'brisie', freq: 5}, {word: 'insurance', freq: 10}]
         },{
             word: 'Travel Ins.',
             mentions: rf(100),
@@ -106,7 +114,8 @@ const initialState: AppState = {
             joy: stats[rf(statsLen)],
             fear: stats[rf(statsLen)],
             disgust: stats[rf(statsLen)],
-            anger: stats[rf(statsLen)]
+            anger: stats[rf(statsLen)],
+            wordFreq: [{word: 'office', freq: 3}, {word: 'brisie', freq: 5}, {word: 'insurance', freq: 10}]
         },{
             word: 'Motorcycle Loan',
             mentions: rf(100),
@@ -115,7 +124,8 @@ const initialState: AppState = {
             joy: stats[rf(statsLen)],
             fear: stats[rf(statsLen)],
             disgust: stats[rf(statsLen)],
-            anger: stats[rf(statsLen)]
+            anger: stats[rf(statsLen)],
+            wordFreq: [{word: 'office', freq: 3}, {word: 'brisie', freq: 5}, {word: 'insurance', freq: 10}]
         }
     ]
 };

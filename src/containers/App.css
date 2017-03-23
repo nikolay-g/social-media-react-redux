@@ -22,5 +22,11 @@
 @media (max-width: 600px) {
     button.ChartNavButton {
         font-size: 12px;
+        padding-bottom: 1px;
+        padding-top: 1px;
+    }
+    header div {
+        padding-bottom: 1px;
+        padding-top: 1px;
     }
 }

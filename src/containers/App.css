@@ -6,8 +6,17 @@
   height: 100%;
 }
 
-.SnackBar {
-    height: 1.5em;
+
+@media (max-width: 600px) {
+    .SnackBar {
+        height: 1em;
+    }
+}
+
+@media (max-width: 900px) {
+    .SnackBar {
+        height: 1.5em;
+    }
 }
 
 @media (max-width: 600px) {

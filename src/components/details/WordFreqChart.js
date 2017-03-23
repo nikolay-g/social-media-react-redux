@@ -12,13 +12,13 @@ class WordFreqChart extends React.Component {
     render() {
         const w: number = this.props.containerWidth;
         const h: number = (this.props.containerHeight || this.props.containerWidth);
-        const sz: number = 0.65 * Math.min(w,h);
+        const sz: number = Math.min(500, w, h);
         const {topic} = this.props;
 
         const data = topic.wordFreq;
 
         return (
-            <BarChart width={sz} height={sz} data={data}>
+            <BarChart width={sz} height={0.5 * sz} data={data}>
                 <XAxis dataKey="word"/>
                 <YAxis/>
                 <Bar dataKey='freq' fill='#8884d8'/>

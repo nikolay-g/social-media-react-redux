@@ -26,7 +26,7 @@ class FeelingsRadarChart extends React.Component {
         ];
 
         return (
-            <RadarChart outerRadius={sz/3.5} cx={5 + sz/2.5} cy={5 + sz/2.5} width={sz} height={sz} data={data}>
+            <RadarChart outerRadius={sz/3.5} cx={40 + sz/3} cy={10 + sz/3} width={sz} height={sz} data={data}>
               <Radar name="Feelings" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6}/>
               <PolarGrid />
               <PolarAngleAxis dataKey="subject" />

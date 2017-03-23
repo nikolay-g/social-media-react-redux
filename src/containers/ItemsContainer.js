@@ -31,15 +31,15 @@ class ItemsContainer extends Component {
         const selectTopic = this.props.actions.topic;
 
         if (this.props.chartType === 'treemap') {
-            return (<div style={{height: '40vh'}}>
+            return (<div style={{height: '35vh'}}>
                 <TreeMap mode="binary" topics={topics} selectTopic={selectTopic} />
             </div>);
         } else if (this.props.chartType === 'bubble_chart'){
-            return (<div style={{height: '40vh'}}>
+            return (<div style={{height: '35vh'}}>
                 <TreeMap mode="circlePack" topics={topics} selectTopic={selectTopic} />
             </div>);
         } else if(this.props.chartType === 'cloud') {
-            return (<div style={{height: '40vh'}}>
+            return (<div style={{height: '35vh'}}>
                 <WordCloud topics={topics} selectTopic={selectTopic}/>
             </div>)
         }

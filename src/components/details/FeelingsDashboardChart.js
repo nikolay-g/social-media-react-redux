@@ -17,10 +17,10 @@ class FeelingsDashboardChart extends React.Component {
 
         const data02 = [{name: 'Group A', value: 0.7}, {name: '', value: 0.3}];
 
-        const cx = Math.min(75, w / 6, h / 3);
+        const cx = Math.min(50, w / 8, h / 6);
         const cy = cx;
-        const innerRadius = 0.65 * cx;
-        const outerRadius = 0.85 * cx;
+        const innerRadius = 0.75 * cx;
+        const outerRadius = 0.95 * cx;
 
         return (
             <PieChart width={w} height={h}>
@@ -77,7 +77,7 @@ class FeelingsDashboardChart extends React.Component {
 }
 
 FeelingsDashboardChart.propTypes = {
-    topic: PropTypes.object.isRequired
+    keyWord: PropTypes.object.isRequired
 };
 
 export default Dimensions()(FeelingsDashboardChart);

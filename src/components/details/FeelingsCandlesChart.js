@@ -13,7 +13,7 @@ class FeelingsCandlesChart extends React.Component {
     render() {
         const w: number = this.props.containerWidth;
         const h: number = (this.props.containerHeight || this.props.containerWidth);
-        const sz: number = 0.85*Math.min(w, h);
+        const sz: number = 0.8 * Math.min(w, h);
         const {topic} = this.props;
         const {sadness, joy, fear, disgust, anger} = topic;
 

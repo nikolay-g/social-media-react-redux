@@ -13,5 +13,5 @@ export type Topic = {
     anger: Stats,
     wordFreq: WordFreq[],
 };
-export type Selection = { sources: string[], states: string[], timeframe: string, currentTopic: ?string };
+export type Selection = { sources: string[], brands: string[], timeframe: string, currentTopic: ?string };
 export type AppState = { selection: Selection, topics: Topic[] };

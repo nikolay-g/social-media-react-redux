@@ -21,7 +21,7 @@ const statsLen = stats.length;
 const initialState: AppState = {
     selection: {
         sources: ['fb', 'tw'],
-        states: ['vic', 'nsw', 'qld', 'other'],
+        brands: ['aami', 'apia', 'gio', 'suncorp'],
         timeframe: '24h',
         currentTopic: null
     },

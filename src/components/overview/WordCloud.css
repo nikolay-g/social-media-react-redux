@@ -2,8 +2,12 @@
   cursor: pointer;
   vertical-align: middle;
   margin:0 auto;
-  margin: 5;
-  padding: 5;
+}
+
+.simple-cloud .tag-cloud-tag:hover {
+    opacity: 0.85;
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 .simple-cloud {

@@ -36,26 +36,26 @@ const DrawerMenu = (props: {selection: Selection, updateSelection: Function}) =>
             </RadioGroup>
             <br/>
 
-            <p>Location:</p>
+            <p>Brand:</p>
             <Checkbox
-                checked={selection.states.includes('vic')}
-                onChange={() => updateSelection(update(selection, 'states', 'vic'))}
-                label="VIC"
+                checked={selection.brands.includes('aami')}
+                onChange={() => updateSelection(update(selection, 'brands', 'aami'))}
+                label="AAMI"
             />
             <Checkbox
-                checked={selection.states.includes('nsw')}
-                onChange={() => updateSelection(update(selection, 'states', 'nsw'))}
-                label="NSW"
+                checked={selection.brands.includes('apia')}
+                onChange={() => updateSelection(update(selection, 'brands', 'apia'))}
+                label="APIA"
             />
             <Checkbox
-                checked={selection.states.includes('qld')}
-                onChange={() => updateSelection(update(selection, 'states', 'qld'))}
-                label="QLD"
+                checked={selection.brands.includes('gio')}
+                onChange={() => updateSelection(update(selection, 'brands', 'gio'))}
+                label="GIO"
             />
             <Checkbox
-                checked={selection.states.includes('other')}
-                onChange={() => updateSelection(update(selection, 'states', 'other'))}
-                label="Other"
+                checked={selection.brands.includes('suncorp')}
+                onChange={() => updateSelection(update(selection, 'brands', 'suncorp'))}
+                label="Suncorp"
             />
         </div>
     );

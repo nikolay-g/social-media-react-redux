@@ -34,8 +34,9 @@ class WordCloud extends React.Component {
     }
 
     customRenderer(tag, size, color) {
-        return <span key={tag.value}
-                     style={{
+        return <span className={"tag-cloud-tag"}
+            key={tag.value}
+            style={{
                   animation: 'blinker 3s linear infinite',
                   animationIterationCount: 1,
                   animationDuration: `${Math.sqrt(size)}s`,

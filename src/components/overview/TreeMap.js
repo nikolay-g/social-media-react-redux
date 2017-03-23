@@ -7,6 +7,7 @@ import chroma from 'chroma-js';
 import Dimensions from 'react-dimensions';
 import scale from '../../util/colors';
 import 'react-vis/dist/style.css';
+import './TreeMap.css';
 
 class TreeMap extends React.Component {
 

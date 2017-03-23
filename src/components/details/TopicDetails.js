@@ -5,6 +5,7 @@ import Dimensions from 'react-dimensions';
 import FeelingsRadarChart from './FeelingsRadarChart';
 import FeelingsCandlesChart from './FeelingsCandlesChart';
 import FeelingsDashboardChart from './FeelingsDashboardChart';
+import WordFreqChart from './WordFreqChart';
 import Summary from './Summary';
 import Tab from 'react-toolbox/lib/tabs/Tab';
 import Tabs from 'react-toolbox/lib/tabs/Tabs';
@@ -44,7 +45,6 @@ class TopicDetails extends React.Component {
 
         return (
             <section>
-                <p>Analysis for <strong>"{topic.word}" ... </strong></p>
                 <Tabs index={this.state.selectedIndex} onChange={this.handleTabChange} inverse className={"ChartNavButton"}>
                     <Tab label='Stats'>
                         <Summary topic={topic}/>
@@ -66,7 +66,7 @@ class TopicDetails extends React.Component {
                     </Tab>
                     <Tab label='Words'>
                         <div style={{height: `${sz}px`}}>
-                            <FeelingsCandlesChart topic={topic}/>
+                            <WordFreqChart topic={topic}/>
                         </div>
                     </Tab>
                 </Tabs>

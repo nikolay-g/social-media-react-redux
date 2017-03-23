@@ -54,7 +54,7 @@ class TopicDetails extends React.Component {
                             <FeelingsRadarChart topic={topic}/>
                         </div>
                     </Tab>
-                    <Tab label='Emo Dashboard'>
+                    <Tab label='Emo Board'>
                         <div style={{height: `${sz}px`}}>
                             <FeelingsDashboardChart topic={topic}/>
                         </div>

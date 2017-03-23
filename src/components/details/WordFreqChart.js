@@ -18,7 +18,7 @@ class WordFreqChart extends React.Component {
         const data = topic.wordFreq;
 
         return (
-            <BarChart width={sz} height={0.5 * sz} data={data}>
+            <BarChart width={0.75 * sz} height={0.5 * sz} data={data}>
                 <XAxis dataKey="word"/>
                 <YAxis/>
                 <Bar dataKey='freq' fill='#8884d8'/>

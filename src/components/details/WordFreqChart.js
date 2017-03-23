@@ -12,7 +12,7 @@ class WordFreqChart extends React.Component {
     render() {
         const w: number = this.props.containerWidth;
         const h: number = (this.props.containerHeight || this.props.containerWidth);
-        const sz: number = 0.75 * Math.min(w,h);
+        const sz: number = 0.65 * Math.min(w,h);
         const {topic} = this.props;
 
         const data = topic.wordFreq;

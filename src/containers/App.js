@@ -61,13 +61,14 @@ class App extends Component {
                     </div>
                     <Snackbar
                         action='Dismiss'
+                        className={"SnackBar"}
                         label={`Analysis for "${this.props.selection.currentTopic}"`}
                         onClick={toggleSnackBar}
                         ref='snackbar'
                         onTimeout={toggleSnackBar}
                         type='cancel'
                         active={this.state.snackBarActive}
-                        timeout={10000}
+                        timeout={20000}
                     />
                 </Panel>
             </Layout>

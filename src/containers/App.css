@@ -6,6 +6,10 @@
   height: 100%;
 }
 
+.SnackBar {
+    height: 1.5em;
+}
+
 @media (max-width: 600px) {
     button.ChartNavButton {
         font-size: 12px;

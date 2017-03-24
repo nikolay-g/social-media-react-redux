@@ -18,7 +18,7 @@ const scaler = (value: number, type: string) => {
     }
 
     if(result === 0) {
-        return 0.9;
+        return 1;
     } else {
         return result;
     }

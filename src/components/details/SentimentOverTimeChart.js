@@ -19,17 +19,18 @@ class SentimentOverTimeChart extends React.Component {
 
 
         const data = topic.contents;
-        const dateFormat = time => moment(time).format('HH[h] DD/MMM');
 
         const ats = data.map(d => d.at);
         const min = _.min(ats);
         const max = _.max(ats);
+        const diffDays = (max - min) / (24 * 60 * 60 * 1000)
+        const dateFormat = time => moment(time).format(diffDays <= 1 ? 'HH[h] DD/MMM': 'DD/MMM');
         const xDelta = 60 * 60 * 1000 + (max - min) / 10;
         const xDomain = [min - xDelta, max + xDelta];
 
         return (
             <ScatterChart width={0.8*w} height={0.8*sz} margin={{top: 1, left: 1}}>
-                <XAxis dataKey={'at'} tickFormatter={dateFormat} domain={xDomain} />
+                <XAxis dataKey={'at'} tickFormatter={dateFormat} domain={xDomain} padding={{ left: 40 }} />
                 <YAxis dataKey={'sentiment'} domain={[-1, 1]}/>
                 <Scatter data={data} fill='#8884d8'/>
             </ScatterChart>

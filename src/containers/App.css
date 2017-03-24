@@ -26,8 +26,8 @@ section:focus {
 @media (max-width: 600px) {
     button.ChartNavButton {
         font-size: 12px;
-        padding-bottom: 1px;
-        padding-top: 1px;
+        padding-bottom: 2px;
+        padding-top: 2px;
     }
     header div {
         padding-bottom: 1px;

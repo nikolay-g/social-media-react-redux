@@ -19,7 +19,7 @@ class SentimentOverTimeChart extends React.Component {
 
 
         const data = topic.contents;
-        const dateFormat = time => moment(time).format('DD/MMM/YY');
+        const dateFormat = time => moment(time).format('HH[h] DD/MMM');
 
         const ats = data.map(d => d.at);
         const min = _.min(ats);

@@ -33,7 +33,7 @@ class CustomizedAxisTick extends React.Component{
 
    	return (
     	<g transform={`translate(${x},${y})`}>
-        <text x={0} y={0} dy={16} textAnchor="end" fill="#666" transform="rotate(-45)">{payload.value}</text>
+        <text x={0} y={0} dy={16} textAnchor="end" fill="#666" transform="rotate(-30)">{payload.value}</text>
       </g>
     );
   }

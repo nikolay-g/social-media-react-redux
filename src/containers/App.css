@@ -12,8 +12,13 @@ section:focus {
 }
 
 @media (max-width: 600px) {
-    .SnackBar {
-        height: 1em;
+    div.SnackBar {
+        height: 2em;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .SnackBar span span {
+        font-size: 12px;
     }
 }
 

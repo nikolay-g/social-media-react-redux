@@ -89,7 +89,7 @@ class App extends Component {
                         onTimeout={toggleSnackBar}
                         type='cancel'
                         active={this.state.snackBarActive}
-                        timeout={25000}
+                        timeout={60 * 1000}
                     />
                 </div>
             );

@@ -30,8 +30,8 @@ class SentimentOverTimeChart extends React.Component {
 
         return (
             <ScatterChart width={0.8*w} height={0.8*sz} margin={{top: 1, left: 1}}>
-                <XAxis dataKey={'at'} tickFormatter={dateFormat} domain={xDomain} padding={{ left: 40 }} />
-                <YAxis dataKey={'sentiment'} domain={[-1, 1]}/>
+                <XAxis dataKey={'at'} tickFormatter={dateFormat} domain={xDomain} padding={{ left: 15 }} />
+                <YAxis dataKey={'sentiment'} domain={[-1, 1]} padding={{ bottom: 15 }}/>
                 <Scatter data={data} fill='#8884d8'/>
             </ScatterChart>
         );

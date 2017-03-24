@@ -18,7 +18,6 @@ class WordCloud extends React.Component {
         let w: number = Math.min(1500, containerWidth);
         let h: number = containerHeight;
 
-        // debugger
         const {sizeScaleType} = this.props;
 
         const data = this.props.topics.map(t => {
@@ -27,9 +26,9 @@ class WordCloud extends React.Component {
 
         const area = w * h;
         let maxSize = 5;
-        if(area <= 500 * 100) {
+        if(area <= 500 * 200) {
             maxSize = 1.7;
-        } else if(area <= 600 * 200) {
+        } else if(area <= 600 * 400) {
             maxSize = 2.3;
         } else if(area <= 900 * 300) {
             maxSize = 3;

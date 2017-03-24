@@ -8,8 +8,10 @@
 }
 
 
-@media (max-width: 500px) {
+@media (max-width: 550px) {
     .ChartNavButton div {
         font-size: 11px;
+        padding-left: 3px;
+        padding-bottom: 3px;
     }
 }

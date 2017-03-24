@@ -13,19 +13,35 @@ class WordCloud extends React.Component {
     props: {topics: Topic[], sizeScaleType: string, selectTopic: Function, containerWidth: number, containerHeight: number};
 
     render() {
+        const {containerWidth, containerHeight} = this.props;
 
-        const w: number = Math.min(450, this.props.containerWidth);
-        const h: number = this.props.containerHeight;
+        let w: number = Math.min(1500, containerWidth);
+        let h: number = containerHeight;
+
+        // debugger
         const {sizeScaleType} = this.props;
 
         const data = this.props.topics.map(t => {
             return {value: t.word, color: scale(t.sentiment.avg).hex(), count: scaler(t.mentions, sizeScaleType)}
         });
 
+        const area = w * h;
+        let maxSize = 5;
+        if(area <= 500 * 100) {
+            maxSize = 1.7;
+        } else if(area <= 600 * 200) {
+            maxSize = 2.4;
+        } else if(area <= 900 * 300) {
+            maxSize = 3;
+        } else if(area <= 1000 * 400) {
+            maxSize = 4;
+        }
+
+
         return (
             <TagCloud style={{width: `${w}px`, height: `${h}px`, margin: 'auto'}}
                       minSize={0.5}
-                      maxSize={2}
+                      maxSize={maxSize}
                       tags={data}
                       className="simple-cloud"
                       disableRandomColor={true}
@@ -44,8 +60,8 @@ class WordCloud extends React.Component {
                   animationDuration: `1s`,
                   fontSize: `${size}em`,
                   color: `${color || 'green'}`,
-                  margin: `0px 5px 1px 5px`,
-                  padding: `0px 5px 1px 5px`,
+                  margin: `0px 5px 2px 5px`,
+                  padding: `0px 5px 2px 5px`,
                   display: 'inline-block',
                   cursor: 'pointer'
             }}>{tag.value}</span>

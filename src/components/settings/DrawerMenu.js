@@ -26,7 +26,6 @@ const DrawerMenu = (props: {selection: Selection, updateSelection: Function}) =>
                 onChange={() => updateSelection(update(selection, 'sources', 'tw'))}
                 label="Facebook"
             />
-            <br/>
 
             <p>Timeframe:</p>
             <RadioGroup name='time' value={selection.timeframe} onChange={(v) => updateSelection(update(selection, 'timeframe', v))}>
@@ -34,7 +33,6 @@ const DrawerMenu = (props: {selection: Selection, updateSelection: Function}) =>
                 <RadioButton label='Last Week' value='lastweek'/>
                 <RadioButton label='Last Month' value='lastmonth'/>
             </RadioGroup>
-            <br/>
 
             <p>Brand:</p>
             <Checkbox
@@ -57,7 +55,6 @@ const DrawerMenu = (props: {selection: Selection, updateSelection: Function}) =>
                 onChange={() => updateSelection(update(selection, 'brands', 'suncorp'))}
                 label="Suncorp"
             />
-            <br/>
 
             <p>Scale type:</p>
             <RadioGroup name='time' value={selection.scale} onChange={(v) => updateSelection(update(selection, 'scale', v))}>

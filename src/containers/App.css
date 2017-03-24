@@ -7,6 +7,10 @@
 }
 
 
+section:focus {
+    outline:0;
+}
+
 @media (max-width: 600px) {
     .SnackBar {
         height: 1em;

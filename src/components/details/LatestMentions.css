@@ -1,0 +1,17 @@
+.SampleList {
+    color: black;
+}
+
+ul.SampleList li.SampleListItem {
+    white-space: normal;
+}
+
+ul.SampleList li.SampleListItem p {
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+    ul.SampleList li.SampleListItem p {
+        font-size: 12px;
+    }
+}

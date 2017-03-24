@@ -5,7 +5,7 @@ import Checkbox from 'react-toolbox/lib/checkbox';
 import RadioGroup from 'react-toolbox/lib/radio/RadioGroup';
 import RadioButton from 'react-toolbox/lib/radio/RadioButton';
 
-import type {Selection} from '../types/definitions';
+import type {Selection} from '../../types/definitions';
 import './DrawerMenu.css';
 
 
@@ -57,6 +57,15 @@ const DrawerMenu = (props: {selection: Selection, updateSelection: Function}) =>
                 onChange={() => updateSelection(update(selection, 'brands', 'suncorp'))}
                 label="Suncorp"
             />
+            <br/>
+
+            <p>Scale type:</p>
+            <RadioGroup name='time' value={selection.scale} onChange={(v) => updateSelection(update(selection, 'scale', v))}>
+                <RadioButton label='Linear' value='linear'/>
+                <RadioButton label='Logarithmic (Base 2)' value='log2'/>
+                <RadioButton label='Logarithmic (Base 10)' value='log10'/>
+                <RadioButton label='Sq. Root' value='sqrt'/>
+            </RadioGroup>
         </div>
     );
 };

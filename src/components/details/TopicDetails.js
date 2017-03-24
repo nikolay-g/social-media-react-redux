@@ -6,7 +6,9 @@ import FeelingsRadarChart from './FeelingsRadarChart';
 import FeelingsCandlesChart from './FeelingsCandlesChart';
 import FeelingsDashboardChart from './FeelingsDashboardChart';
 import WordFreqChart from './WordFreqChart';
+import LatestMentions from './LatestMentions';
 import Summary from './Summary';
+import SentimentOverTimeChart from './SentimentOverTimeChart';
 import Tab from 'react-toolbox/lib/tabs/Tab';
 import Tabs from 'react-toolbox/lib/tabs/Tabs';
 import './TopicDetails.css';
@@ -46,8 +48,8 @@ class TopicDetails extends React.Component {
         return (
             <section>
                 <Tabs index={this.state.selectedIndex} onChange={this.handleTabChange} inverse className={"ChartNavButton"}>
-                    <Tab label='Stats'>
-                        <Summary topic={topic}/>
+                    <Tab label='Latest'>
+                        <LatestMentions topic={topic}/>
                     </Tab>
                     <Tab label='Emo Radar'>
                         <div style={{height: `${sz}px`}}>
@@ -59,15 +61,23 @@ class TopicDetails extends React.Component {
                             <FeelingsDashboardChart topic={topic}/>
                         </div>
                     </Tab>
-                    <Tab label='Emo Ranges'>
+                    <Tab label='Timeline'>
                         <div style={{height: `${sz}px`}}>
-                            <FeelingsCandlesChart topic={topic}/>
+                            <SentimentOverTimeChart topic={topic}/>
                         </div>
                     </Tab>
                     <Tab label='Words'>
                         <div style={{height: `${sz}px`}}>
                             <WordFreqChart topic={topic}/>
                         </div>
+                    </Tab>
+                    <Tab label='Emo Ranges'>
+                        <div style={{height: `${sz}px`}}>
+                            <FeelingsCandlesChart topic={topic}/>
+                        </div>
+                    </Tab>
+                    <Tab label='Stats'>
+                        <Summary topic={topic}/>
                     </Tab>
                 </Tabs>
             </section>

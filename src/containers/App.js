@@ -11,15 +11,21 @@ import Snackbar from 'react-toolbox/lib/snackbar/Snackbar';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {updateSelection} from '../actions/selections';
-import type {Selection} from '../types/definitions'
+import {getTopics} from '../actions/topics';
+import type {Selection, Topic} from '../types/definitions';
 
 import ItemsContainer from './ItemsContainer';
 import DrawerMenu from '../components/settings/DrawerMenu';
+import ProgressBar from 'react-toolbox/lib/progress_bar';
 import './App.css';
 
 class App extends Component {
     state = {drawerActive: false, overviewChartType: 'treemap', snackBarActive: false};
-    props: {selection: Selection, actions:*};
+    props: {selection: Selection, topics: Topic[], actions:*};
+
+    componentDidMount(){
+        this.props.actions.getTopics();
+    }
 
     componentWillReceiveProps(nextProps: {selection: Selection, actions:*}){
         const currentTopic = this.props.selection.currentTopic;
@@ -42,14 +48,29 @@ class App extends Component {
     };
 
     render() {
-        const toggleSnackBar = this.toggleSnackBar.bind(this);
-
         return (
             <Layout>
                 <NavDrawer active={this.state.drawerActive} onOverlayClick={ this.toggleDrawerActive }>
                     <DrawerMenu selection={this.props.selection} updateSelection={this.props.actions.updateSelection}/>
                 </NavDrawer>
                 <Panel>
+                    {this.mainPanel()}
+                </Panel>
+            </Layout>
+        );
+    }
+
+    mainPanel() {
+        if (this.props.topics.length === 0) {
+            return (<div>
+                <p>Loading ...</p>
+                <ProgressBar mode='indeterminate' multicolor />
+            </div>);
+        } else {
+            const toggleSnackBar = this.toggleSnackBar.bind(this);
+
+            return (
+                <div>
                     <AppBar leftIcon='settings' onLeftIconClick={ this.toggleDrawerActive }>
                         {this.navButton('treemap', 'view_compact', 'Heatmap')}
                         {this.navButton('bubble_chart', 'bubble_chart', 'Bubbles')}
@@ -62,18 +83,17 @@ class App extends Component {
                     <Snackbar
                         action='Dismiss'
                         className={"SnackBar"}
-                        label={`Analysis for "${this.props.selection.currentTopic}"`}
+                        label={<span>Topic: "<strong>{this.props.selection.currentTopic}</strong>"</span>}
                         onClick={toggleSnackBar}
                         ref='snackbar'
                         onTimeout={toggleSnackBar}
                         type='cancel'
                         active={this.state.snackBarActive}
-                        timeout={20000}
+                        timeout={25000}
                     />
-                </Panel>
-            </Layout>
-        );
-
+                </div>
+            );
+        }
     }
 
     navButton(key: string, icon: string, label: string) {
@@ -99,13 +119,14 @@ App.propTypes = {
 
 function mapStateToProps(state, props) {
     return {
-        selection: state.selection
+        selection: state.selection,
+        topics: state.topics
     };
 }
 
 function mapDispatchToProps(dispatch: *) {
     return {
-        actions: bindActionCreators({updateSelection}, dispatch)
+        actions: bindActionCreators({updateSelection, getTopics}, dispatch)
     }
 }
 

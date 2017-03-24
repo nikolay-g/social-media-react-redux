@@ -3,7 +3,7 @@
 import React, {PropTypes} from 'react';
 import type {Topic} from '../../types/definitions.js';
 import {RadialChart, Treemap} from 'react-vis';
-import chroma from 'chroma-js';
+import scaler from '../../util/scaler'
 import Dimensions from 'react-dimensions';
 import scale from '../../util/colors';
 import 'react-vis/dist/style.css';
@@ -11,14 +11,15 @@ import './TreeMap.css';
 
 class TreeMap extends React.Component {
 
-    props: {topics: Topic[], selectTopic: Function, mode: string, containerWidth: number, containerHeight: number};
+    props: {topics: Topic[], sizeScaleType: string, selectTopic: Function, mode: string, containerWidth: number, containerHeight: number};
 
     render() {
         const w: number = this.props.containerWidth;
         const h: number = this.props.containerHeight;
+        const {sizeScaleType} = this.props;
 
         const children = this.props.topics.map(t => {
-            return {title: t.word, color: scale(t.sentiment.avg).hex(), size: t.mentions}
+            return {title: t.word, color: scale(t.sentiment.avg).hex(), size: scaler(t.mentions, sizeScaleType)}
         });
 
       return (
@@ -44,7 +45,8 @@ class TreeMap extends React.Component {
 TreeMap.propTypes = {
     topics: PropTypes.array.isRequired,
     selectKeyWord: PropTypes.func.isRequired,
-    mode: PropTypes.string.isRequired
+    mode: PropTypes.string.isRequired,
+    sizeScaleType: PropTypes.string.isRequired
 };
 
 export default Dimensions()(TreeMap);

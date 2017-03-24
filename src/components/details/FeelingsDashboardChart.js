@@ -3,7 +3,6 @@
 import React, {PropTypes} from 'react';
 import {PieChart, Pie, Legend, Tooltip} from 'recharts';
 import Dimensions from 'react-dimensions';
-import {Grid, Col, Row} from 'react-flexbox-grid';
 import {good, bad, ligthen} from '../../util/colors';
 import type {Topic} from '../../types/definitions';
 

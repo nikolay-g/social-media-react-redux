@@ -29,18 +29,19 @@ class ItemsContainer extends Component {
         // const {appState} = this.props;
         const topics = this.props.appState.topics;
         const selectTopic = this.props.actions.topic;
+        const {scale} = this.props.appState.selection;
 
         if (this.props.chartType === 'treemap') {
             return (<div style={{height: '35vh'}}>
-                <TreeMap mode="binary" topics={topics} selectTopic={selectTopic} />
+                <TreeMap mode="binary" sizeScaleType={scale} topics={topics} selectTopic={selectTopic} />
             </div>);
         } else if (this.props.chartType === 'bubble_chart'){
             return (<div style={{height: '35vh'}}>
-                <TreeMap mode="circlePack" topics={topics} selectTopic={selectTopic} />
+                <TreeMap mode="circlePack" sizeScaleType={scale} topics={topics} selectTopic={selectTopic} />
             </div>);
         } else if(this.props.chartType === 'cloud') {
             return (<div style={{height: '35vh'}}>
-                <WordCloud topics={topics} selectTopic={selectTopic}/>
+                <WordCloud topics={topics} sizeScaleType={scale} selectTopic={selectTopic}/>
             </div>)
         }
     }

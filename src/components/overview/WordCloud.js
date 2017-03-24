@@ -3,21 +3,23 @@
 import React, {PropTypes} from 'react';
 import {TagCloud} from "react-tagcloud";
 import scale from '../../util/colors';
+import scaler from '../../util/scaler'
 import Dimensions from 'react-dimensions';
 import type {Topic} from '../../types/definitions.js';
 import './WordCloud.css';
 
 class WordCloud extends React.Component {
 
-    props: {topics: Topic[], selectTopic: Function, containerWidth: number, containerHeight: number};
+    props: {topics: Topic[], sizeScaleType: string, selectTopic: Function, containerWidth: number, containerHeight: number};
 
     render() {
 
         const w: number = Math.min(450, this.props.containerWidth);
         const h: number = this.props.containerHeight;
+        const {sizeScaleType} = this.props;
 
-        const data = this.props.topics.map(kw => {
-            return {value: kw.word, color: scale(kw.sentiment.avg).hex(), count: kw.mentions}
+        const data = this.props.topics.map(t => {
+            return {value: t.word, color: scale(t.sentiment.avg).hex(), count: scaler(t.mentions, sizeScaleType)}
         });
 
         return (
@@ -39,11 +41,11 @@ class WordCloud extends React.Component {
             style={{
                   animation: 'blinker 3s linear infinite',
                   animationIterationCount: 1,
-                  animationDuration: `${Math.sqrt(size)}s`,
+                  animationDuration: `1s`,
                   fontSize: `${size}em`,
                   color: `${color || 'green'}`,
-                  margin: `${Math.round(Math.log2(size) + 1)}px`,
-                  padding: `${Math.round(Math.log2(size) + 1)}px`,
+                  margin: `0px 5px 1px 5px`,
+                  padding: `px 5px 1px 5px`,
                   display: 'inline-block',
                   cursor: 'pointer'
             }}>{tag.value}</span>
@@ -56,7 +58,8 @@ class WordCloud extends React.Component {
 
 WordCloud.propTypes = {
     topics: PropTypes.array.isRequired,
-    selectTopic: PropTypes.func.isRequired
+    selectTopic: PropTypes.func.isRequired,
+    sizeScaleType: PropTypes.string.isRequired
 };
 
 export default Dimensions()(WordCloud);

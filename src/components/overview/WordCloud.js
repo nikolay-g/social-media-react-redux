@@ -30,7 +30,7 @@ class WordCloud extends React.Component {
         if(area <= 500 * 100) {
             maxSize = 1.7;
         } else if(area <= 600 * 200) {
-            maxSize = 2.4;
+            maxSize = 2.3;
         } else if(area <= 900 * 300) {
             maxSize = 3;
         } else if(area <= 1000 * 400) {

@@ -1,16 +1,26 @@
 // @flow
 
 const scaler = (value: number, type: string) => {
-    if(type === 'linear') {
-        return value;
+    let result = 0;
+
+    if(value === 0) {
+        return 0;
+    } else if(type === 'linear') {
+        result = value;
     } else if(type === 'log2') {
-        return Math.log2(value)
+        result = Math.log2(value)
     } else if(type === 'log10') {
-        return Math.log10(value)
+        result = Math.log10(value)
     } else if(type === 'sqrt') {
-        return Math.sqrt(value)
+        result = Math.sqrt(value)
     } else {
         throw `Unsupported scale type ${type}`;
+    }
+
+    if(result === 0) {
+        return 0.9;
+    } else {
+        return result;
     }
 };
 

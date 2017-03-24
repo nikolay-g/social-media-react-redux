@@ -24,7 +24,7 @@ class SentimentOverTimeChart extends React.Component {
         const ats = data.map(d => d.at);
         const min = _.min(ats);
         const max = _.max(ats);
-        const xDelta = (max - min) / 10;
+        const xDelta = 60 * 60 * 1000 + (max - min) / 10;
         const xDomain = [min - xDelta, max + xDelta];
 
         return (

@@ -15,7 +15,7 @@ class SampleData extends React.Component {
         const { topic } = this.props;
         return (<List className={'SampleList'}>
                 {
-                    topic.contents.slice(0, 10).map(c => this.contentItem(c))
+                    topic.contents.slice(0, 20).map(c => this.contentItem(c))
                 }
                 </List>);
     }

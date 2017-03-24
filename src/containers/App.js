@@ -62,8 +62,8 @@ class App extends Component {
 
     mainPanel() {
         if (this.props.topics.length === 0) {
-            return (<div>
-                <p>Loading ...</p>
+            return (<div style={{margin: '3em 3em 3em 3em'}}>
+                <h3>Loading ...</h3>
                 <ProgressBar mode='indeterminate' multicolor />
             </div>);
         } else {

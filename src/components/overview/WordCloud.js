@@ -25,7 +25,7 @@ class WordCloud extends React.Component {
         return (
             <TagCloud style={{width: `${w}px`, height: `${h}px`, margin: 'auto'}}
                       minSize={0.5}
-                      maxSize={2.5}
+                      maxSize={2}
                       tags={data}
                       className="simple-cloud"
                       disableRandomColor={true}
@@ -45,7 +45,7 @@ class WordCloud extends React.Component {
                   fontSize: `${size}em`,
                   color: `${color || 'green'}`,
                   margin: `0px 5px 1px 5px`,
-                  padding: `px 5px 1px 5px`,
+                  padding: `0px 5px 1px 5px`,
                   display: 'inline-block',
                   cursor: 'pointer'
             }}>{tag.value}</span>

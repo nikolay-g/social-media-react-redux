@@ -2,8 +2,9 @@
 
 import chroma from 'chroma-js';
 
-const colorSpectrum = ['#8b0000', '#b61d39', '#d84765', '#ef738b', '#fea0ac', '#ffd1c9',
-    '#ffffe0', '#c7f0ba', '#9edba4', '#7ac696', '#5aaf8c', '#399785', '#008080'];
+// From http://gka.github.io/palettes/#diverging|c0=darkred,deeppink,gainsboro|c1=gainsboro,lightgreen,teal|steps=13|bez0=1|bez1=1|coL0=1|coL1=1
+const colorSpectrum = ['#8b0000','#b01532','#ce385c','#e25e81','#ec87a4','#ebb1c2','#dcdcdc','#9fd6aa','#7fc69a',
+    '#65b690','#4ba389','#2f9184','#008080'];
 
 const scale = chroma.scale(colorSpectrum).domain([-1, 1]);
 

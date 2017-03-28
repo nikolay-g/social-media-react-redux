@@ -3,6 +3,8 @@
 import React, {PropTypes} from 'react';
 
 import { List, ListItem, ListSubHeader, ListDivider, ListCheckbox } from 'react-toolbox/lib/list';
+import IconButton from 'react-toolbox/lib/button/IconButton';
+import scale from '../../util/colors';
 
 import './LatestMentions.css';
 
@@ -24,7 +26,7 @@ class SampleData extends React.Component {
         return (
             <ListItem className={'SampleListItem'}
                       caption={<p>{c.text}</p>}
-                      rightIcon={this.icon(c)}
+                      rightIcon={<IconButton style={{color: scale(c.sentiment)}} icon={this.icon(c)} disabled />}
                       avatar={c.avatar}
             />
         );

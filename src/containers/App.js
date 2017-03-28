@@ -20,7 +20,7 @@ import ProgressBar from 'react-toolbox/lib/progress_bar';
 import './App.css';
 
 class App extends Component {
-    state = {drawerActive: false, overviewChartType: 'treemap', snackBarActive: false};
+    state = {drawerActive: false, overviewChartType: 'cloud', snackBarActive: false};
     props: {selection: Selection, topics: Topic[], actions:*};
 
     componentDidMount(){
@@ -72,9 +72,8 @@ class App extends Component {
             return (
                 <div>
                     <AppBar leftIcon='settings' onLeftIconClick={ this.toggleDrawerActive }>
-                        {this.navButton('treemap', 'view_compact', 'Heatmap')}
-                        {this.navButton('bubble_chart', 'bubble_chart', 'Bubbles')}
                         {this.navButton('cloud', 'cloud', 'Topic Cloud')}
+                        {this.navButton('treemap', 'view_compact', 'Heatmap')}
                     </AppBar>
 
                     <div style={{ flex: 1, padding: '1.0rem' }}>

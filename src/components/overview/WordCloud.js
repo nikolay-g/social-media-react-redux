@@ -25,8 +25,10 @@ class WordCloud extends React.Component {
         });
 
         const area = w * h;
+        let minSize = 0.5;
         let maxSize = 5;
         if(area <= 500 * 200) {
+            minSize = 0.3;
             maxSize = 1.7;
         } else if(area <= 600 * 400) {
             maxSize = 2.3;
@@ -39,7 +41,7 @@ class WordCloud extends React.Component {
 
         return (
             <TagCloud style={{width: `${w}px`, height: `${h}px`, margin: 'auto'}}
-                      minSize={0.5}
+                      minSize={minSize}
                       maxSize={maxSize}
                       tags={data}
                       className="simple-cloud"

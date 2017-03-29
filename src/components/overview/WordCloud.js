@@ -6,6 +6,7 @@ import scale from '../../util/colors';
 import scaler from '../../util/scaler'
 import Dimensions from 'react-dimensions';
 import type {Topic} from '../../types/definitions.js';
+import _ from 'lodash';
 import './WordCloud.css';
 
 class WordCloud extends React.Component {
@@ -15,41 +16,50 @@ class WordCloud extends React.Component {
     render() {
         const {containerWidth, containerHeight} = this.props;
 
-        let w: number = Math.min(1500, containerWidth);
+        let w: number = Math.min(1200, containerWidth);
         let h: number = containerHeight;
 
-        const {sizeScaleType} = this.props;
-
-        const data = this.props.topics.map(t => {
-            return {value: t.word, color: scale(t.sentiment.avg).hex(), count: scaler(t.mentions, sizeScaleType)}
-        });
-
         const area = w * h;
-        let minSize = 0.5;
-        let maxSize = 5;
-        if(area <= 500 * 200) {
-            minSize = 0.3;
-            maxSize = 1.7;
-        } else if(area <= 600 * 400) {
-            maxSize = 2.3;
+        let minSize = 25;
+        let maxSize = 60;
+        if(area <= 470 * 350) {
+            minSize = 10;
+            maxSize = 25;
+        } else if(area <= 630 * 410) {
+            minSize = 15;
+            maxSize = 30;
         } else if(area <= 900 * 300) {
-            maxSize = 3;
+            maxSize = 45;
         } else if(area <= 1000 * 400) {
-            maxSize = 4;
+            maxSize = 50;
         }
-
+        console.log(w, h, minSize, maxSize)
 
         return (
             <TagCloud style={{width: `${w}px`, height: `${h}px`, margin: 'auto'}}
                       minSize={minSize}
                       maxSize={maxSize}
-                      tags={data}
+                      tags={this.data()}
                       className="simple-cloud"
                       disableRandomColor={true}
                       shuffle={false}
                       renderer={this.customRenderer.bind(this)}
                       onClick={this.onLeafClick.bind(this)}/>
         )
+    }
+
+    data() {
+        const {sizeScaleType} = this.props;
+
+        let data = this.props.topics.map(t => {
+            return {value: t.word, color: scale(t.sentiment.avg).hex(), count: scaler(t.mentions, sizeScaleType)}
+        });
+        data = _.sortBy(data, 'count');
+        for(let i = 0; i < data.length / 4; i++){
+            let el = data.splice(i, 1);
+            data.push(el[0]);
+        }
+        return data;
     }
 
     customRenderer(tag, size, color) {
@@ -59,7 +69,7 @@ class WordCloud extends React.Component {
                   animation: 'blinker 3s linear infinite',
                   animationIterationCount: 1,
                   animationDuration: `1s`,
-                  fontSize: `${size}em`,
+                  fontSize: `${size}px`,
                   color: `${color || 'green'}`,
                   margin: `0px 5px 2px 5px`,
                   padding: `0px 5px 2px 5px`,

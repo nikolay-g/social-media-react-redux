@@ -2,7 +2,6 @@
 
 import React, {PropTypes} from 'react';
 import { TagCloud } from "react-tagcloud";
-import chroma from 'chroma-js';
 import Dimensions from 'react-dimensions';
 import { Surface, Radar, RadarChart, PolarGrid, Legend, Tooltip,
          PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';

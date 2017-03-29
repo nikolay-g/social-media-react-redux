@@ -2,7 +2,7 @@
 
 import React, {PropTypes} from 'react';
 
-import { List, ListItem, ListSubHeader, ListDivider, ListCheckbox } from 'react-toolbox/lib/list';
+import { List, ListItem } from 'react-toolbox/lib/list';
 import IconButton from 'react-toolbox/lib/button/IconButton';
 import scale from '../../util/colors';
 

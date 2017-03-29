@@ -2,6 +2,10 @@
     color: black;
 }
 
+li.SampleListItem span {
+    padding: 0;
+}
+
 ul.SampleList li.SampleListItem {
     white-space: normal;
 }

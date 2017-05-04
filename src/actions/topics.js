@@ -12,6 +12,7 @@ export const getTopics = () => {
     [CALL_API]: {
       endpoint: `${process.env.REACT_APP_API || ''}/topics`,
       method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
       types: [GET_TOPICS, GET_TOPICS_SUCCESS, GET_TOPICS_FAIL]
     }
   }

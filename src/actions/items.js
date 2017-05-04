@@ -21,6 +21,7 @@ export const getServerItems = () => {
     [CALL_API]: {
       endpoint: `${process.env.REACT_APP_API || ''}/items`,
       method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
       types: [GET_ITEMS, GET_ITEMS_SUCCESS, GET_ITEMS_FAIL]
     }
   }
